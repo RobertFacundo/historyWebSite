@@ -1,4 +1,4 @@
-# 🏛️ History Web Site
+# 📜 History Web Site
 
 Welcome to History Web Site, a dynamic and engaging platform dedicated to exploring various historical topics. Built with React and Vite, this project offers a seamless and modern user experience. A standout feature is its robust internationalization support, allowing users to effortlessly switch between English, Spanish, and Italian content, making historical narratives accessible to a wider audience.
 
