@@ -1,0 +1,48 @@
+/* src/components/LanguageToggle/LanguageToggle.css */
+.language-toggle-container {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  justify-content: center;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.language-toggle-container button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+
+  display: flex; /* Para centrar la imagen de la bandera dentro del botón */
+  align-items: center;
+  justify-content: center;
+  padding: 5px; 
+}
+
+/* Estilos para las imágenes de bandera */
+.flag-icon-img {
+  width: 25px; /* Tamaño inicial de la bandera */
+  height: 25px; /* Tamaño inicial de la bandera */
+  object-fit: contain; /* Asegura que la imagen completa se vea sin recortarse */
+  border-radius: 13px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  
+  /* CLAVE: Transición para el efecto de escala */
+  transition: transform 0.4s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.language-toggle-container button:hover .flag-icon-img {
+  transform: scale(1.3); /* Aumenta el tamaño de la imagen al 130% */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Sombra dorada al hacer hover */
+}
+
+.language-toggle-container button.active .flag-icon-img {
+  transform: scale(1.3); /* Mantiene el tamaño aumentado */
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Mantiene la sombra dorada */
+}
+
+.language-toggle-container button.active {
+  font-weight: bold;
+}
+

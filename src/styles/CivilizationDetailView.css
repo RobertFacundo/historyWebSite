@@ -1,0 +1,78 @@
+/* src/styles/CivilizationDetailView.css */
+.civilization-detail-view-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: rgb(35, 34, 34);
+  align-items: center; /* Centra el contenido principal horizontalmente */
+  overflow: hidden;
+}
+
+.detail-header {
+  width: 100%;
+  max-width: 900px; /* Ancho máximo para el encabezado */
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative; /* Para posicionar el botón de regreso */
+}
+
+.detail-header h1 {
+  font-size: 2.2em;
+  color: #61dafb;
+  margin-top: 0;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el layout principal de dos columnas */
+.detail-main-layout {
+  display: flex;
+  flex-wrap: row; /* Permite que las columnas se apilen en pantallas pequeñas *//* Espacio entre las columnas */
+  width: 100vw;
+  height: auto;
+  overflow: hidden;
+}
+
+.detail-sidebar {
+  flex: 3; /* Ocupa una parte del espacio (1/3 si la otra es 2) */
+  width: 100%; /* Ancho mínimo para la columna del slider */  
+  height: auto;
+  display: flex;
+  justify-content: center; /* Centra el slider dentro de su columna */
+}
+
+.detail-content-area {
+  flex: 4; /* Ocupa más espacio que la sidebar (2/3) */
+  min-width: 300px; /* Ancho mínimo para la columna de contenido */
+  /* El background-color, padding, etc. del contenido se manejarán en SectionCommon.css */
+  max-width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .detail-main-layout {
+    flex-direction: column; /* Las columnas se apilan en pantallas pequeñas */
+    gap: 20px;
+  }
+  .detail-sidebar, .detail-content-area {
+    min-width: unset; /* Elimina el ancho mínimo para permitir que ocupen todo el ancho */
+    width: 100%;
+  }
+}

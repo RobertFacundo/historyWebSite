@@ -1,0 +1,94 @@
+.civilization-section{
+    padding: 18px;
+    background-color: rgba(255, 255, 255, 0.072);
+    font-family: "Metamorphous", serif;
+    font-weight: 300;
+    font-size: 1em;
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.civilization-section.home-section { /* Un poco más de paddineg interno */
+    background-color: rgba(255, 255, 255, 0.08); /* Ligeramente más opaco que el 0.072 */
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para profundidad */
+    color: #e0e0e0; /* Color de texto general para esta sección (gris claro) */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque si lo soporta el navegador (efecto de cristal esmerilado) */
+    -webkit-backdrop-filter: blur(5px); /* Prefijo para navegadores basados en WebKit */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    height: 550px;
+}
+
+/* Estilos para los títulos H1, H2, H3 dentro de esta sección */
+.civilization-section.home-section h1 {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 2.3em; /* Tamaño grande para el título principal */
+    font-weight: lighter;
+    text-shadow: 0 0 8px #989796, 0 0 15px rgba(171, 171, 170, 0.7); 
+    color: #0a0a0a;
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria sutil */
+    padding-bottom: 11px;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.civilization-section.home-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #1e1e1e;
+    text-shadow: 0 0 8px #989796, 0 0 15px rgba(171, 171, 170, 0.7); 
+    margin-bottom: 20px;
+    text-align: left; /* Títulos secundarios alineados a la izquierda */
+}
+
+.civilization-section.home-section p {
+    font-family: 'Open Sans', sans-serif; /* Una fuente legible para el cuerpo del texto */
+    font-size: 1.15em; /* Un poco más grande para mejor legibilidad */
+    line-height: 1.4; /* Mayor interlineado */
+    color: #1f1e1e; /* Gris más claro para el texto de párrafo */ /* Más espacio entre párrafos */
+    text-align: justify; /* Texto justificado para un aspecto limpio */
+}
+
+/* Para las etiquetas <br> que insertas en el HTML del JSON */
+
+
+.civilization-section.home-section b,
+.civilization-section.home-section strong {
+    color: #151414; /* Negritas más blancas para destacar */
+    font-weight: 700; /* Asegura que sean bien negritas */
+   text-shadow: 0 0 8px #989796, 0 0 15px rgba(171, 171, 170, 0.7);  
+}
+
+/* Si tienes listas dentro de tu contenido Markdown */
+.civilization-section.home-section ul,
+.civilization-section.home-section ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+    color: #1a1919;
+}
+
+.civilization-section.home-section li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+/* Estilos para el contenedor de los bloques de contenido (si los necesitas) */
+.section-content-block {
+    padding: 0; /* Ya el padding se lo dimos al .civilization-section.home-section */
+}
+
+/* Media queries para CivilizationHomeSection (si es necesario) */
+@media (max-width: 768px) {
+    .civilization-section.home-section {
+        padding: 20px; /* Reduce el padding en móviles */
+    }
+    .civilization-section.home-section h1 {
+        font-size: 2em;
+    }
+    .civilization-section.home-section p {
+        font-size: 1em;
+    }
+}

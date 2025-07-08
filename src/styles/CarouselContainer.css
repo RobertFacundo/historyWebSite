@@ -1,0 +1,82 @@
+/* src/components/CarouselContainer/CarouselContainer.css */
+.carousel-container-wrapper {
+  display: flex;
+  flex-direction: column; /* Apila el Slider y los puntos verticalmente */
+  align-items: center; /* Centra el Slider horizontalmente */ 
+  border-radius: 12px;
+  
+  max-width: 1000px; /* Ancho máximo para el contenedor del carrusel */
+  width: 90vw; /* Ocupa el 90% del ancho disponible de su padre, hasta max-width */
+  
+  /* CLAVE: Define una altura fija o máxima para el contenedor del carrusel */
+  height: 80vh; /* Ajusta esta altura según lo que necesites para el carrusel completo */
+  /* Si prefieres que sea responsivo a la altura de la ventana: */
+  /* max-height: 80vh; */ 
+  
+  margin: 0 auto; /* Centra el contenedor completo en la página */
+  position: relative; /* Necesario para posicionar las flechas de slick */
+}
+
+/* Estilos para el componente Slider (react-slick) */
+.slick-slider {
+  width: 100%; /* Asegura que el slider ocupe todo el ancho de su contenedor */
+  height: 100%; /* CLAVE: Asegura que el slider ocupe toda la altura de su contenedor */
+  display: flex; /* Para que sus hijos (slick-list) se comporten como flex */
+  flex-direction: column; /* Para apilar los slides y los dots/arrows */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.slick-list {
+  width: 100%;
+  height: 100%; /* CLAVE: El viewport de los slides debe tener altura */
+  overflow: hidden; /* CLAVE: Oculta los slides que no están visibles */
+  padding: 0 !important; /* Elimina padding interno que slick a veces añade */
+}
+
+.slick-track {
+  display: flex !important; /* Asegura que los slides se alineen en fila */
+  height: 100%; /* CLAVE: Asegura que el track ocupe toda la altura del list */
+}
+
+.slick-slide {
+  height: 100%; /* CLAVE: Cada slide individual debe ocupar el 100% de la altura del track */
+  display: flex !important; /* Para centrar el contenido del slide (CarouselItem) */
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* Estilos para sobrescribir las flechas de react-slick */
+.slick-prev:before, .slick-next:before {
+  color: #f6ef30 !important; /* Color de las flechas */
+  font-size: 30px !important; /* Tamaño de las flechas */
+  text-shadow: 0 0 1px #FFD700, 0 0 4px #FFD700; /* Sombra dorada */
+   transition: text-shadow 0.5s ease-in-out; 
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before { /* Un dorado más brillante al hacer hover */
+  text-shadow: 0 0 2px #c1bc28, 0 0 5px #a9a423; /* Sombra más pronunciada al hacer hover */
+}
+
+/* Estilos para los puntos de navegación de react-slick */
+.slick-dots {
+  position: absolute; /* Posiciona los puntos fuera del flujo normal */
+  bottom: 10px; /* Ajusta la posición vertical */
+  width: 100%; /* Ocupa todo el ancho */
+  margin: 0; /* Elimina margen por defecto */
+  padding: 0; /* Elimina padding por defecto */
+  list-style: none; /* Elimina los puntos de lista */
+  text-align: center;
+  transition: color 3.5s ease-in-out;
+}
+
+.slick-dots li button:before {
+  color: #bbb !important; /* Color de los puntos inactivos */
+}
+.slick-dots li.slick-active button:before {
+ color: #f6ef30 !important; /* Color de las flechas */
+}
+
+/* Asegúrate de que el CarouselItem no tenga un ancho fijo que interfiera */
+/* Los estilos del CarouselItem.css son importantes aquí */

@@ -1,0 +1,78 @@
+/* src/components/CarouselItem/CarouselItem.css */
+.carousel-item {
+  border-radius: 10px;
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el ratón */
+  
+  margin: 15px; /* Espacio alrededor del ítem */
+  text-align: center;
+  color: white; /* Color de texto por defecto */
+  display: flex; /* Para usar flexbox en el layout interno */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  
+  width: 100%;
+  height: 100%;
+}
+  
+
+.carousel-item-link {
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: inherit; /* Hereda el color de texto del padre */
+  display: flex;
+  flex-direction: column;
+  height: 90%; /* Ocupa todo el alto del contenedor padre */ 
+}
+
+.carousel-item-img {
+  height: 500px; /* Altura fija para las imágenes del carrusel */
+  object-fit: contain; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+
+   /* ESTILOS DE ANIMACIÓN PARA CUANDO EL SLIDE CAMBIA */
+  opacity: 0; /* Inicialmente invisible */
+  transform: scale(0.9); /* Ligeramente más pequeño al inicio */
+  transition: opacity 4.8s ease-out, transform 2.8s ease-out; /* Transición suave */
+}
+
+
+.carousel-item-description {
+  font-size: 0.9em; /* Tamaño de fuente para la descripción */
+  padding: 0 15px 15px; /* Relleno horizontal y inferior */
+  line-height: 1.4; /* Espaciado entre líneas */
+  flex-grow: 1; /* Permite que la descripción ocupe el espacio restante */
+  display: flex; /* Para alinear el contenido Markdown */
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el texto si hay espacio */
+}
+
+/* Cuando el slide es activo, la imagen aparece */
+.slick-active .carousel-item-img {
+  opacity: 1;
+  transform: scale(1);
+}
+.carousel-item-description {
+  font-size: 0.9em; 
+  padding: 0 15px 15px; 
+  line-height: 1.4; 
+  flex-grow: 1; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  font-family: "Cinzel Decorative", serif;
+  letter-spacing: 0.8px;
+  
+  /* ESTILOS DE ANIMACIÓN PARA CUANDO EL SLIDE CAMBIA */
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(20px); /* Ligeramente desplazado hacia abajo al inicio */
+  transition: opacity 3.9s ease-out 0.2s, transform 0.8s ease-out 0.2s; /* Transición con un pequeño delay */
+}
+
+/* Cuando el slide es activo, la descripción aparece */
+.slick-active .carousel-item-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carousel-item-description p {
+  margin-bottom: 0.5em; 
+}

@@ -1,0 +1,138 @@
+/* src/styles/MythologySection.css */
+
+.mythology-section-container {
+    display: flex;
+    gap: 30px; /* Espacio entre el navbar lateral y el contenido */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 550px;
+}
+
+.mythology-sidebar {
+    flex: 0 0 220px; /* Ancho fijo para la barra lateral */
+    background-color: #dedede43;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    position: sticky; /* Hace que la barra lateral sea pegajosa al hacer scroll */
+    top: 20px; /* Distancia desde la parte superior de la ventana */
+    align-self: center; /* Asegura que se alinee al principio */
+    max-height: calc(100vh - 40px); /* Ajusta la altura máxima para que quepa en la pantalla */
+}
+
+.mythology-sidebar h3 {
+    margin-top: 0;
+    color: #161616;
+    font-size: 1.3em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.vertical-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+}
+
+.vertical-navbar li {
+    margin-bottom: 20px;
+}
+
+.vertical-navbar a {
+    text-decoration: none;
+    color: #0a0a0a;
+    font-weight: 500;
+    font-size: 1.0em;
+    transition: text-shadow 0.8s ease-in-out, color 0.3s ease-in-out;
+    font-family: "Cinzel Decorative", serif;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.vertical-navbar a:hover,
+.vertical-navbar a:focus {
+   color: rgb(0, 0, 0);
+   text-decoration: underline; 
+}
+
+.mythology-content {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    background-color: #ffffff;
+    color: rgb(17, 16, 16);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    height: calc(100vh - 240px);
+    overflow-y: auto; /* Agrega scroll si el contenido es demasiado largo */
+    scroll-behavior: smooth;
+    opacity: 0;
+    animation: fadeIn  1.5s ease-in-out forwards;
+}
+
+/* Estilos para el ParagraphBlock dentro de MythologySection para un mejor espaciado */
+.mythology-content .section-content-block {
+    line-height: 1.7;
+    color: #1c1c1c;
+}
+
+.mythology-content .section-content-block h1 {
+    font-size: 1.5em;
+    text-shadow: 0 0 8px #989796, 0 0 15px rgba(171, 171, 170, 0.7); 
+    font-family: "Cinzel Decorative", serif;  
+}
+
+.mythology-content .section-content-block h2 {
+    color: #191919;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    text-shadow: 0 0 8px #989796, 0 0 15px rgba(171, 171, 170, 0.7);  
+    font-family: "Cinzel Decorative", serif;
+}
+
+.mythology-content .section-content-block p {
+    margin-bottom: 1em;
+    opacity: 0;
+    animation: fadeIn  1.5s ease-in-out forwards;
+}
+
+.hr {
+    border: 0;
+    height: 1px;
+    background-color: #47474630;
+    margin: 40px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .mythology-section-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mythology-sidebar {
+        flex: auto;
+        position: static; /* Disable sticky for smaller screens */
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

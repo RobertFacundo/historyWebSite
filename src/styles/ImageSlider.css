@@ -1,0 +1,39 @@
+/* src/components/ImageSlider/ImageSlider.css */
+.image-slider-container {
+  width: 100%;
+  height: 590px; /* Altura fija para el contenedor del rotador */
+  margin: 0 auto 20px auto; /* Centra el contenedor y añade margen inferior */
+  border-radius: 10px;
+  overflow: hidden; /* Asegura que las imágenes no se salgan del contenedor */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra para darle profundidad */
+  position: relative; /* CLAVE: Necesario para posicionar las imágenes absolutamente dentro */
+}
+
+.image-slider-placeholder {
+  width: 100%;
+  height: 100%; /* Ocupa toda la altura del contenedor padre */
+  background-color: #333; /* Fondo gris oscuro para el placeholder */
+  display: flex;
+  align-items: center; /* Centra verticalmente el texto */
+  justify-content: center; /* Centra horizontalmente el texto */
+  color: #bbb; /* Color de texto claro */
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.slider-image {
+  position: absolute; /* CLAVE: Posiciona todas las imágenes una encima de la otra */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* CLAVE: La imagen cubrirá todo el espacio, recortando si es necesario para evitar distorsión */
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+  opacity: 0; /* CLAVE: Por defecto, todas las imágenes son invisibles */
+  transition: opacity 1.5s ease-in-out; /* CLAVE: Transición de opacidad suave (1.5 segundos) */
+}
+
+.slider-image.active {
+  opacity: 1; /* CLAVE: La imagen con la clase 'active' se vuelve completamente visible */
+}

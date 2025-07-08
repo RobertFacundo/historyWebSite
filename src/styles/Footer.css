@@ -1,0 +1,25 @@
+.footer-container{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    position: fixed; /* Keep this */
+    bottom: 0; /* Keep this */
+    left: 0; /* Keep this */
+    z-index: 1000; /* Keep this */
+    max-height: 2rem; /* Keep this */
+    font-size: 11px;
+    padding: 0.5rem 0; /* Add some padding for better aesthetics */
+    text-align: center; 
+    letter-spacing: 1px;
+}
+
+.github-link{
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    transition: text-shadow 0.8s ease-in-out;
+    text-shadow: 0 0 8px #989796, 0 0 15px rgba(171, 171, 170, 0.7); 
+}
+.github-link:hover{
+    text-shadow: 0 0 8px #FFD700, 0 0 15px rgba(255, 215, 0, 0.7); 
+}
